@@ -11,9 +11,9 @@ local sector10 = tab1:CreateSector("Aimlock Fov","left")
 local sector11 = tab1:CreateSector("Misc","right")
 local sector12 = tab1:CreateSector("Misc 2","left")
 local sector13 = tab2:CreateSector("Other","left")
-local sector14 = tab2:CreateSector("Tps 1 - Other","right")
-local sector15 = tab2:CreateSector("Tps 2","left")
-local sector16 = tab2:CreateSector("Tps 3 - Other","right")
+local sector14 = tab2:CreateSector("Section 1","right")
+local sector15 = tab2:CreateSector("Section 2","left")
+local sector16 = tab2:CreateSector("Section 3","right")
 
 
 
@@ -399,35 +399,6 @@ wait(0)
             end
 		end)
 
-sector11:AddButton("Underground (P,O)", function()
-underground = false
-        plr = game.Players.LocalPlayer
-        mouse = plr:GetMouse()
-        mouse.KeyDown:connect(function(key)
-        
-        if key == "o" then
-        
-                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.new(0,-9,0)
-        game:GetService('RunService').Stepped:connect(function()
-        if underground then
-        game.Players.LocalPlayer.Character.Humanoid:ChangeState(11)
-        end
-        end)
-        end
-        end)
-        wait()
-        
-        plr = game.Players.LocalPlayer
-        mouse = plr:GetMouse()
-        mouse.KeyDown:connect(function(key)
-        
-        if key == "p" then
-                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.new(0,11,0)
-        underground = not underground
-        game.Players.LocalPlayer.Character.Humanoid:ChangeState(11)
-        end
-        end)
-end)
 
 sector11:AddButton("Buy Armor", function()
 local plr = game.Players.LocalPlayer
@@ -659,7 +630,7 @@ sector11:AddButton("Rejoin", function()
 end)
 
 	
-		sector11:AddButton("Chat Spy", function()
+		sector11:AddButton("Chat Logs", function()
 		      -- // Initialise
         --if (getgenv().ChatSpy) then return getgenv().ChatSpy; end;
         repeat wait() until game:GetService("ContentProvider").RequestQueueSize == 0;
@@ -938,9 +909,6 @@ sector12:AddButton("Trashtalk (J)", function(L_178_arg0)
                 end)
 
 
-sector12:AddButton("Infinite Zoom",false,function()
-game:GetService("Players").LocalPlayer.CameraMaxZoomDistance = math.huge
-end)
 
  local button =  sector12:AddButton("Dot Cursor (Auto)", function()
      game:GetService("Players").LocalPlayer.PlayerGui.MainScreenGui.Aim.Top.Visible = false
@@ -2504,7 +2472,7 @@ sector14:AddButton("AutoClicker (Z)", function()
 			end)
 end)
 
-sector14:AddButton("Loop Mute Radio (Sided)", function()
+sector14:AddButton("Loop Mute Radio", function()
  for i, v in pairs(game:GetService'Players':GetChildren()) do
 if v and v.Character then
 local character = v.Character.name
@@ -2597,7 +2565,7 @@ sector15:AddButton("Teleport Bank", function()
     end)
            
 
-      sector16:AddButton("Buy Db (Dupeable)", function()
+      sector16:AddButton("Buy Db", function()
     L_10_ = game:GetService'Players'.LocalPlayer
 	local L_504_ = game.Workspace.Ignored.Shop['[Double-Barrel SG] - $1400']
 	local L_505_ = L_10_.Character.HumanoidRootPart.Position
@@ -2609,7 +2577,7 @@ sector15:AddButton("Teleport Bank", function()
 	L_10_.Character.HumanoidRootPart.CFrame = CFrame.new(L_505_)
     end)
 
- sector16:AddButton("Buy Rev (Dupeable)", function()
+ sector16:AddButton("Buy Rev", function()
 	L_10_ = game:GetService'Players'.LocalPlayer
 	local L_498_ = '[Revolver] - $1300'
 	local L_499_ = game.Workspace.Ignored.Shop[L_498_]
@@ -2634,72 +2602,9 @@ sector16:AddButton("Teleport G Station", function()
         game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-525.353455, 68.125, 311.824402, 0.999992013, 1.03866675e-08, -0.00399552286, -1.03507425e-08, 1, 9.01170427e-09, 0.00399552286, -8.97027519e-09, 0.999992013)
     end)
 
-      sector16:AddButton("Godmode (Melees)", function()
-    local function L_427_func()
-		local L_428_ = game:GetService('Players').LocalPlayer;
-		local L_429_ = L_428_.Character;
-		L_429_:FindFirstChildOfClass('Humanoid').Health = 0;
-
-		local L_430_ = L_428_.CharacterAdded:Wait();
-		local L_431_ = Instance.new('Folder');
-		L_431_.Name = 'FULLY_LOADED_CHAR';
-		L_431_.Parent = L_430_;
-		L_430_:WaitForChild('RagdollConstraints'):Destroy();
-		local L_432_ = Instance.new('BoolValue', L_430_);
-		L_432_.Name = 'RagdollConstraints';
-
-		local L_433_ = game:GetService("Players")
-		local L_434_ = L_433_.LocalPlayer
-		local L_435_ = L_434_.Character
-
-		L_435_.BodyEffects.Armor:Destroy()
-		L_435_.BodyEffects.Defense:Destroy()
-
-		local L_436_ = Instance.new("NumberValue")
-		L_436_.Name = "Defense"
-		L_436_.Parent = L_435_.BodyEffects
-
-		local L_437_ = Instance.new("NumberValue")
-		L_437_.Name = "Armor"
-		L_437_.Parent = L_435_.BodyEffects
-
-		game.ReplicatedStorage.MainEvent:FireServer("Block", true)
-	end
 
 
-	L_427_func()
-	while wait() do
-		for L_438_forvar0, L_439_forvar1 in pairs(game.Players.LocalPlayer.Character:FindFirstChildWhichIsA('Humanoid'):GetPlayingAnimationTracks()) do
-			if L_439_forvar1.Name == 'Block' then
-				L_439_forvar1:Stop()
-			end
-		end
-	end	
-      end)
-
- sector16:AddButton("Godmode (Guns)", function()
-    local L_424_ = game.Players.LocalPlayer
-
-	L_424_.Character:FindFirstChild("FULLY_LOADED_CHAR").Parent = game.ReplicatedStorage
-	L_424_.Character:Remove()
-	game.ReplicatedStorage:FindFirstChild("FULLY_LOADED_CHAR").Parent = L_424_.Character
-	local L_425_ = true
-
-	while wait() do
-		pcall(function()
-			if game.Players.LocalPlayer.Character.BodyEffects:FindFirstChild("BreakingParts") and L_425_ == true then
-				game.Players.LocalPlayer.Character.BodyEffects.BreakingParts:Destroy()
-				local L_426_ = Instance.new("Folder", game.Players.LocalPlayer.Character)
-				L_426_.Name = "FULLY_LOADED_CHAR"
-				wait()
-				game.StarterGui:SetCoreGuiEnabled(Enum.CoreGuiType.Backpack, true)
-				L_424_.Character:FindFirstChild("FULLY_LOADED_CHAR").Parent = game.ReplicatedStorage
-			end
-		end)
-	end
-    end)
-
- sector16:AddButton("Anti Ban (Admin)", function()
+ sector16:AddButton("Kick If Admin Joins", function()
 local annoying = {"JokeTheFool", "Sherosama", "dtbbullet", "AStrongMuscle", "XavierWild", "NikoSenpai", "UziGarage", "iumu", "Benoxa", "Luutyy", "clubstar54", "givkitheth", "DrxcoBaby" , "DrxcoRxsh" } -- you can add more players by doing {"Player1", "Player2"}
  
 game.Players.PlayerAdded:Connect(function(plr)
@@ -2712,7 +2617,7 @@ end
 end)
  end)
 
- sector16:AddButton("Better GamePlay", function()
+ sector16:AddButton("No Graphics", function()
 local decalsyeeted = true -- Leaving this on makes games look shitty but the fps goes up by at least 20.
 local g = game
 local w = g.Workspace
