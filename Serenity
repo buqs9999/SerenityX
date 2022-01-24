@@ -251,7 +251,7 @@ local L_11_ = L_10_:GetMouse()
 local L_12_ = game:GetService("RunService")
 
 circle = Drawing.new("Circle")
-circle.Color = Color3.fromRGB((128,49,167))
+circle.Color = Color3.fromRGB(255, 105, 180)
 circle.Thickness = 0.1
 circle.NumSides = 3500
 circle.Radius = 50
