@@ -221,10 +221,6 @@ Aiming.Enabled =t
 end)
 
 
-sector22:AddToggle("Silent Aim V2 (CS)",false,function(t)
-
-end)
-
 sector22:AddToggle("Wall Check",false,function(RAR)
  Aiming.VisibleCheck = RAR
 end)
