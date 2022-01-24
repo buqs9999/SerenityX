@@ -1,7 +1,7 @@
 
 
 lib = loadstring(game:HttpGet"https://raw.githubusercontent.com/buqs9999/SerenityUI/main/Sern")()
-local win = lib:CreateWindow("Serenity", Vector2.new(492, 598), Enum.KeyCode.RightControl)
+local win = lib:CreateWindow("Doomware", Vector2.new(492, 598), Enum.KeyCode.RightControl)
 local tab1 = win:CreateTab("Page 1")
 local tab2 = win:CreateTab("Page 2")
 local tab3 = win:CreateTab("Page 3")
