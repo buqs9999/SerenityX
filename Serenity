@@ -618,14 +618,7 @@ while true do
                 end
 end)
 
-sector11:AddButton("Rejoin", function()
- local tpservice= game:GetService("TeleportService")
-            local plr = game.Players.LocalPlayer
 
-            tpservice:Teleport(game.PlaceId, plr)
-end)
-
-	
 		sector11:AddButton("Chat Logs", function()
 		      -- // Initialise
         --if (getgenv().ChatSpy) then return getgenv().ChatSpy; end;
@@ -782,10 +775,7 @@ end)
 			end)
     end)
     
-   local button sector11:AddButton("Anti Christmas", function()
-game:GetService("Workspace").Ignored.WinterMAP:Destroy()
-game:GetService("Workspace").Ignored.SnowBlock:Destroy()
-end)
+
     
     local button = sector12:AddButton("Flyish Speed [Q]", function()
   
@@ -817,14 +807,6 @@ end)
      sector12:AddButton("Unbag Function", function(L_178_arg0)
     game.Players.LocalPlayer.Character["Christmas_Sock"]:Destroy()	
      end)
-
- sector12:AddButton("Force Reset", function(L_178_arg0)
-for L_170_forvar0, L_171_forvar1 in pairs(game.Players.LocalPlayer.Character:GetDescendants()) do
-		if L_171_forvar1:IsA("BasePart") then
-			L_171_forvar1:Destroy()
-		end
-	end
-end)
 
 
 sector12:AddButton("Anti Slow", function(L_178_arg0)
@@ -2345,21 +2327,7 @@ sector13:AddTextbox("CFrame Speed", "", function(L_142_arg0)
     end)
     
     
-  
- local button = sector12:AddButton("Full Bright",false,function()
-local Light = game:GetService("Lighting")
-
-            function dofullbright()
-            Light.Ambient = Color3.new(1, 1, 1)
-            Light.ColorShift_Bottom = Color3.new(1, 1, 1)
-            Light.ColorShift_Top = Color3.new(1, 1, 1)
-            end
-
-            dofullbright()
-
-            Light.LightingChanged:Connect(dofullbright)
-
-end)
+ 
   
   sector13:AddButton("Headless (Client Sided)", function()
 	local L_393_ = game.Players.LocalPlayer.Character
@@ -2468,29 +2436,6 @@ sector14:AddButton("AutoClicker (Z)", function()
 			end)
 end)
 
-sector14:AddButton("Loop Mute Radio", function()
- for i, v in pairs(game:GetService'Players':GetChildren()) do
-if v and v.Character then
-local character = v.Character.name
-
-   getgenv().Toggled = true
-   
-   local Player = character
-   
-   local Players = game:GetService('Players')
-   local RunService = game:GetService('RunService')
-   
-   RunService.Heartbeat:Connect(function()
-       if Toggled then
-           pcall(function()
-               Players[Player].Character.LowerTorso:FindFirstChild('BOOMBOXSOUND').Playing = false
-               Players[Player].Character.LowerTorso:FindFirstChild('BOOMBOXSOUND').TimePosition = 0
-           end)
-       end
-   end)
-end
-end
-end)
 
 sector14:AddButton("Spam Call Everyone", function()
 getgenv().SpamPhone = not getgenv().SpamPhone
@@ -2502,29 +2447,8 @@ while SpamPhone do wait()
 end
     end)
 
-sector14:AddButton("Rev Mountain", function()
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-696.847717, 167.674957, -41.0118256, 0.626992583, 7.53169349e-09, -0.779025197, -1.29610933e-09, 1, 8.62493632e-09, 0.779025197, -4.39806902e-09, 0.626992583)
-end)
 
-sector14:AddButton("Db Mountain", function()
- game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-1087.02783, 104.254997, -268.160614, 0.0359299146, -0.000130457382, -0.99935472, -2.87694893e-05, 1, -0.000131575929, 0.99935472, 3.34783836e-05, 0.0359299146)
-end)
 
-sector14:AddButton("Flame Mountain", function()
-    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-228.709259, 96.75, -46.1524429, 0.988781095, -6.16038989e-08, -0.149372295, 5.44428751e-08, 1, -5.20298862e-08, 0.149372295, 4.33139249e-08, 0.988781095)
-end)
-
-sector14:AddButton("Tac Mountain", function()
- game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(493.328918, 112.5, -689.263916, -0.999886096, 0.000241556234, -0.0150990579, 0.000226202334, 0.999999464, 0.00101856329, 0.0150993001, 0.00101503218, -0.999885678)
-end)
-
-sector15:AddButton("Church Mountain", function()
-    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(288.8479, 143.25, -245.123169, -0.999539435, 3.95160157e-07, 0.0303715728, -3.52983733e-07, 1, -2.46274394e-05, -0.0303715728, -2.4626821e-05, -0.999539435)
-end)
-   
- sector15:AddButton("Teleport Ufo", function()
-  game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(2.85052466, 132, -736.571106, -0.0460956171, -4.24733706e-08, -0.998937011, 7.26012459e-08, 1, -4.58687275e-08, 0.998937011, -7.46384217e-08, -0.0460956171)
-end)
    
    sector15:AddButton("Admin Guns", function()
     game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-872.853516, -34.4276848, -538.013306, -0.999724388, -3.9898886e-08, -0.0234765243, -3.9204977e-08, 1, -3.00177518e-08, 0.0234765243, -2.90890814e-08, -0.999724388)
@@ -2586,20 +2510,12 @@ sector15:AddButton("Teleport Bank", function()
 	L_10_.Character.HumanoidRootPart.CFrame = CFrame.new(L_500_)
 end)
 
-sector16:AddButton("Teleport G Station", function()
+sector16:AddButton("Teleport Gas Station", function()
         game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(595.925171, 130.75, -346.41568, -0.0400748774, 7.26109022e-08, 0.999196708, 2.20863914e-08, 1, -7.17834538e-08, -0.999196708, 1.91919352e-08, -0.0400748774)
     end)
              
-	sector16:AddButton("Teleport Cemetery", function()
-        	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(135.109558, 99.75, -57.2315979, 0.999993503, -0.000633752206, -0.0035054055, 0.000638642872, 0.999998808, 0.00139435288, 0.00350463158, -0.00139658386, 0.999992728)
-    end)
-              
-	sector16:AddButton("Teleport School Roof", function()
-        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-525.353455, 68.125, 311.824402, 0.999992013, 1.03866675e-08, -0.00399552286, -1.03507425e-08, 1, 9.01170427e-09, 0.00399552286, -8.97027519e-09, 0.999992013)
-    end)
 
-
-
+          
  sector16:AddButton("Kick If Admin Joins", function()
 local annoying = {"JokeTheFool", "Sherosama", "dtbbullet", "AStrongMuscle", "XavierWild", "NikoSenpai", "UziGarage", "iumu", "Benoxa", "Luutyy", "clubstar54", "givkitheth", "DrxcoBaby" , "DrxcoRxsh" } -- you can add more players by doing {"Player1", "Player2"}
  
@@ -2653,97 +2569,6 @@ for i, e in pairs(l:GetChildren()) do
 end
 end)
 
-local button = sector16:AddButton("Autofarm (Unstoppable)", false, function()
-    --[[
-Da Hood auto rob script by Amnesia
-I know script became a bit monkey code but i am lazy to make it look better
-I didn't obfuscate it because why not
-]]
-repeat
-    wait()
-until game:IsLoaded()
-local gm = getrawmetatable(game)
-setreadonly(gm, false)
-local namecall = gm.__namecall
-gm.__namecall =
-    newcclosure(
-    function(self, ...)
-        local args = {...}
-        if not checkcaller() and getnamecallmethod() == "FireServer" and tostring(self) == "MainEvent" then
-            if tostring(getcallingscript()) ~= "Framework" then
-                return
-            end
-        end
-        if not checkcaller() and getnamecallmethod() == "Kick" then
-            return
-        end
-        return namecall(self, unpack(args))
-    end
-)
-
-local LocalPlayer = game:GetService("Players").LocalPlayer
-
-function gettarget()
-    local Character = LocalPlayer.Character or LocalPlayer.CharacterAdded:wait()
-    local HumanoidRootPart = Character:WaitForChild("HumanoidRootPart")
-    local maxdistance = math.huge
-    local target
-    for i, v in pairs(game:GetService("Workspace").Cashiers:GetChildren()) do
-        if v:FindFirstChild("Head") and v:FindFirstChild("Humanoid") and v.Humanoid.Health > 0 then
-            local distance = (HumanoidRootPart.Position - v.Head.Position).magnitude
-            if distance < maxdistance then
-                target = v
-                maxdistance = distance
-            end
-        end
-    end
-    return target
-end
-
-for i, v in pairs(workspace:GetDescendants()) do
-    if v:IsA("Seat") then
-        v:Destroy()
-    end
-end
-
-
-shared.MoneyFarm = true -- Just execute shared.MoneyFarm = false to stop farming
-
-while shared.MoneyFarm do
-    wait()
-    local Target = gettarget()
-    repeat
-        wait()
-        pcall(
-            function()
-                local Character = LocalPlayer.Character or LocalPlayer.CharacterAdded:wait()
-                local HumanoidRootPart = Character:WaitForChild("HumanoidRootPart")
-                local Combat = LocalPlayer.Backpack:FindFirstChild("Combat") or Character:FindFirstChild("Combat")
-                if not Combat then
-                    Character:FindFirstChild("Humanoid").Health = 0
-                    return
-                end
-                HumanoidRootPart.CFrame = Target.Head.CFrame * CFrame.new(0, -2.5, 3)
-                Combat.Parent = Character
-                Combat:Activate()
-            end
-        )
-    until not Target or Target.Humanoid.Health < 0
-    for i, v in pairs(game:GetService("Workspace").Ignored.Drop:GetDescendants()) do
-        if v:IsA("ClickDetector") and v.Parent and v.Parent.Name:find("Money") then
-            local Character = LocalPlayer.Character or LocalPlayer.CharacterAdded:wait()
-            local HumanoidRootPart = Character:WaitForChild("HumanoidRootPart")
-            if (v.Parent.Position - HumanoidRootPart.Position).magnitude <= 18 then
-                repeat
-                    wait()
-                    fireclickdetector(v)
-                until not v or not v.Parent.Parent
-            end
-        end
-    end
-    wait(1)
-end
-end)
 
 local button = sector16:AddButton("Auto Stomp Function", false, function()
 while true do
