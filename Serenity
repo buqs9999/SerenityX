@@ -1,5 +1,3 @@
---Script made by buqs#2155 , stealing this script will cause you to be blacklisted from doomware.
-
 
 lib = loadstring(game:HttpGet"https://raw.githubusercontent.com/buqs9999/SerenityUI/main/Sern")()
 local win = lib:CreateWindow("Doomware", Vector2.new(492, 598), Enum.KeyCode.RightControl)
