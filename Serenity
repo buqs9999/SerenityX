@@ -774,7 +774,10 @@ end)
 			end)
     end)
     
+    local button = sector12:AddButton("Anti Stomp (Cannot be turned off"), function()
 
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/BlueaqeR/scripts-lol/main/Da%20Hood%20Anti%20Stomp%20(Optimized)"))()
+    end)
     
     local button = sector12:AddButton("Flyish Speed [Q]", function()
   
