@@ -2436,16 +2436,6 @@ sector14:AddButton("AutoClicker (Z)", function()
 end)
 
 
-sector14:AddButton("Spam Call Everyone", function()
-getgenv().SpamPhone = not getgenv().SpamPhone
-while SpamPhone do wait()
-   for i,v in pairs(game.Players:GetPlayers()) do
-       wait(00.1)
-       game.ReplicatedStorage.MainEvent:FireServer("PhoneCall", v.Name)
-   end
-end
-    end)
-
 
 
    
@@ -2484,7 +2474,7 @@ sector15:AddButton("Teleport Bank", function()
     end)
            
 
-      sector16:AddButton("Buy Db", function()
+      sector16:AddButton("Buy Double Barrel", function()
     L_10_ = game:GetService'Players'.LocalPlayer
 	local L_504_ = game.Workspace.Ignored.Shop['[Double-Barrel SG] - $1400']
 	local L_505_ = L_10_.Character.HumanoidRootPart.Position
@@ -2569,12 +2559,6 @@ end
 end)
 
 
-local button = sector16:AddButton("Auto Stomp Function", false, function()
-while true do
-wait(.05)
-game.ReplicatedStorage.MainEvent:FireServer("Stomp")
-end
-end)
 
 local toggle = sector16:AddToggle("Anti Fling Toggle", false, function(lynx2pro)
  game.Players.LocalPlayer.Character.HumanoidRootPart.Anchored = lynx2pro
