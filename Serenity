@@ -237,7 +237,7 @@ DaHoodSettings.Prediction = L_72_arg0
 end)
 
 
-sector22:AddTextbox("Silent Aim Fov Textbox",false,function(hummm)
+sector22:AddTextbox("Silent Aim FOV",false,function(hummm)
  Aiming.FOV = hummm
 end)
 
