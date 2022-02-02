@@ -1,9 +1,8 @@
 
 lib = loadstring(game:HttpGet"https://raw.githubusercontent.com/buqs9999/SerenityUI/main/Doomware")()
 local win = lib:CreateWindow("Doomware", Vector2.new(492, 598), Enum.KeyCode.RightControl)
-local tab1 = win:CreateTab("Page 1")
-local tab2 = win:CreateTab("Page 2")
-local tab3 = win:CreateTab("Page 3")
+local tab1 = win:CreateTab("Aiming")
+local tab2 = win:CreateTab("Misc")
 local sector1 = tab1:CreateSector("Aimlock","left")
 local sector22 = tab1:CreateSector("Silent Aim","right")
 local sector10 = tab1:CreateSector("Aimlock Fov","left")
@@ -23,11 +22,11 @@ getgenv().AimlockKey = "q"
 getgenv().AimRadius = 50 -- How far away from someones character you want to lock on at
 getgenv().ThirdPerson = true
 getgenv().FirstPerson = true
-getgenv().TeamCheck = false -- Check if Target is on your Team (True means it wont lock onto your teamates, false is vice versa) (Set it to false if there are no teams)
+getgenv().TeamCheck = true -- Check if Target is on your Team (True means it wont lock onto your teamates, false is vice versa) (Set it to false if there are no teams)
 getgenv().PredictMovement = true -- Predicts if they are moving in fast velocity (like jumping) so the aimbot will go a bit faster to match their speed
 getgenv().PredictionVelocity = 9
-getgenv().CheckIfJumped = false
-getgenv().AutoPrediction = false
+getgenv().CheckIfJumped = true
+getgenv().AutoPrediction = true
 local L_13_, L_14_, L_15_, L_16_ = game:GetService"Players", game:GetService"UserInputService", game:GetService"RunService", game:GetService"StarterGui";
 local L_17_, L_18_, L_19_, L_20_, L_21_, L_22_, L_23_ = L_13_.LocalPlayer, L_13_.LocalPlayer:GetMouse(), workspace.CurrentCamera, CFrame.new, Ray.new, Vector3.new, Vector2.new;
 local L_24_, L_25_, L_26_ = false, false, false;
@@ -237,7 +236,7 @@ DaHoodSettings.Prediction = L_72_arg0
 end)
 
 
-sector22:AddTextbox("Silent Aim FOV",false,function(hummm)
+sector22:AddTextbox("Silent Aim Fov Textbox",false,function(hummm)
  Aiming.FOV = hummm
 end)
 
@@ -250,7 +249,7 @@ local L_11_ = L_10_:GetMouse()
 local L_12_ = game:GetService("RunService")
 
 circle = Drawing.new("Circle")
-circle.Color = Color3.fromRGB(138,43,226)
+circle.Color = Color3.fromRGB(185,27,244)
 circle.Thickness = 0.1
 circle.NumSides = 3500
 circle.Radius = 50
@@ -386,7 +385,7 @@ end)
                 game:GetService("TeleportService"):TeleportToPlaceInstance(game.PlaceId, x[math.random(1, #x)])
             else
              game.StarterGui:SetCore("SendNotification", {
-    Title = "Kzumaki";
+    Title = "Doomware";
     Text = "Failed 2 Find Server";
     Duration = 3;
 })
@@ -569,12 +568,6 @@ local FreeAnimationPack = Instance.new("ScreenGui")
 				ChestPump.Font = Enum.Font.SourceSansBold
 				ChestPump.Text = "Chest Pump"
 				ChestPump.TextColor3 = Color3.fromRGB(0, 0, 0)
-				ChestPump.TextSize = 14.000
-				ChestPump.MouseButton1Click:Connect(function()
-					stopTracks();
-					loadAnimation("rbxassetid://3189779152");
-				end);
-
 				Praying.Name = "Praying"
 				Praying.Parent = Animations
 				Praying.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
@@ -887,7 +880,7 @@ sector12:AddButton("Trashtalk (J)", function(L_178_arg0)
 
 
 
- local button =  sector12:AddButton("Dot Cursor (Auto)", function()
+ local toggle =  sector12:AddToggle("Dot Cursor (Auto)", function()
      game:GetService("Players").LocalPlayer.PlayerGui.MainScreenGui.Aim.Top.Visible = false
      game:GetService("Players").LocalPlayer.PlayerGui.MainScreenGui.Aim.Right.Visible = false
      game:GetService("Players").LocalPlayer.PlayerGui.MainScreenGui.Aim.Left.Visible = false
@@ -931,7 +924,7 @@ sector12:AddButton("Trashtalk (J)", function(L_178_arg0)
 				print(Multiplier)
 			end
 		end
-		if L_140_arg0.KeyCode == Enum.KeyCode.N then
+		if L_140_arg0.KeyCode == Enum.KeyCode.v then
 			L_138_ = not L_138_
 			if L_138_ == true then
 				repeat
@@ -947,7 +940,7 @@ sector13:AddButton("Anti-Lock (Z)", function()
 	repeat
 		wait()
 	until game:IsLoaded()
-	getgenv().Fix = false
+	getgenv().Fix = true
 	getgenv().TeclasWS = {
 		["tecla1"] = "nil", -- speed +5
 		["tecla2"] = "nil", -- speed -5
@@ -2321,11 +2314,7 @@ local slider = sector13:AddSlider("Anti-Lock Speed", 0, 1, 5, 1, function(L_141_
 	getgenv().Multiplier = L_141_arg0
 end)
 
-sector13:AddTextbox("CFrame Speed", "", function(L_142_arg0)
-	getgenv().Multiplier = L_142_arg0
-    end)
-    
-    
+
  
   
   sector13:AddButton("Headless (Client Sided)", function()
@@ -2436,16 +2425,6 @@ sector14:AddButton("AutoClicker (Z)", function()
 end)
 
 
-sector14:AddButton("Spam Call Everyone", function()
-getgenv().SpamPhone = not getgenv().SpamPhone
-while SpamPhone do wait()
-   for i,v in pairs(game.Players:GetPlayers()) do
-       wait(00.1)
-       game.ReplicatedStorage.MainEvent:FireServer("PhoneCall", v.Name)
-   end
-end
-    end)
-
 
 
    
@@ -2484,7 +2463,7 @@ sector15:AddButton("Teleport Bank", function()
     end)
            
 
-      sector16:AddButton("Buy Db", function()
+      sector16:AddButton("Buy Double Barrel", function()
     L_10_ = game:GetService'Players'.LocalPlayer
 	local L_504_ = game.Workspace.Ignored.Shop['[Double-Barrel SG] - $1400']
 	local L_505_ = L_10_.Character.HumanoidRootPart.Position
@@ -2545,9 +2524,9 @@ settings().Rendering.QualityLevel = "Level01"
 for i, v in pairs(g:GetDescendants()) do
     if v:IsA("Part") or v:IsA("Union") or v:IsA("CornerWedgePart") or v:IsA("TrussPart") then
         v.Material = "Plastic"
-        v.Reflectance = 0
+        v.Reflectance = 1
     elseif v:IsA("Decal") or v:IsA("Texture") and decalsyeeted then
-        v.Transparency = 1
+        v.Transparency = 0
     elseif v:IsA("ParticleEmitter") or v:IsA("Trail") then
         v.Lifetime = NumberRange.new(0)
     elseif v:IsA("Explosion") then
@@ -2569,24 +2548,17 @@ end
 end)
 
 
-local button = sector16:AddButton("Auto Stomp Function", false, function()
-while true do
-wait(.05)
-game.ReplicatedStorage.MainEvent:FireServer("Stomp")
-end
-end)
 
-local toggle = sector16:AddToggle("Anti Fling Toggle", false, function(lynx2pro)
+local toggle = sector12:AddToggle("Anti Fling Toggle", false, function(lynx2pro)
  game.Players.LocalPlayer.Character.HumanoidRootPart.Anchored = lynx2pro
 end)
 
 
 
-local toggle = sector15:AddToggle("CrossHair Visible", false, function(L_178_arg0)
+local toggle = sector12:AddToggle("CrossHair Visible", false, function(L_178_arg0)
  game:GetService("Players").LocalPlayer.PlayerGui.MainScreenGui.Aim.Visible = L_178_arg0
 	game:GetService("Players").LocalPlayer.PlayerGui.MainScreenGui.Aim.Top.Visible = L_178_arg0
 	game:GetService("Players").LocalPlayer.PlayerGui.MainScreenGui.Aim.Bottom.Visible = L_178_arg0
 	game:GetService("Players").LocalPlayer.PlayerGui.MainScreenGui.Aim.Right.Visible = L_178_arg0
 	game:GetService("Players").LocalPlayer.PlayerGui.MainScreenGui.Aim.Left.Visible = L_178_arg0
 end)
-
