@@ -924,7 +924,7 @@ sector12:AddButton("Trashtalk (J)", function(L_178_arg0)
 				print(Multiplier)
 			end
 		end
-		if L_140_arg0.KeyCode == Enum.KeyCode.v then
+		if L_140_arg0.KeyCode == Enum.KeyCode.N then
 			L_138_ = not L_138_
 			if L_138_ == true then
 				repeat
