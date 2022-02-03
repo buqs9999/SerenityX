@@ -2420,7 +2420,7 @@ sector13:AddButton("Playful Vampire (Client Sided)", function()
 	L_417_.Texture = "rbxassetid://2409281591"
 end)
 
-sector14:AddButton("Zombie T/OM", function()
+sector14:AddButton("Tryhard Animations", function()
 local L_206_ = game.Players.LocalPlayer.Character.Animate
             L_206_.idle.Animation1.AnimationId = "http://www.roblox.com/asset/?id=782841498"
             L_206_.idle.Animation2.AnimationId = "http://www.roblox.com/asset/?id=782845736"
@@ -2433,10 +2433,10 @@ wait(1)
 end)
   
   
-  sector14:AddButton("Zombie T/M", function()
+  sector14:AddButton("Tryhard Animations 2", function()
    local L_206_ = game.Players.LocalPlayer.Character.Animate
-            L_206_.idle.Animation1.AnimationId = "http://www.roblox.com/asset/?id=782841498"
-            L_206_.idle.Animation2.AnimationId = "http://www.roblox.com/asset/?id=782845736"
+            L_206_.idle.Animation1.AnimationId = "http://www.roblox.com/asset/?id=1113742618"
+            L_206_.idle.Animation2.AnimationId = "http://www.roblox.com/asset/?id=1113742618"
             L_206_.walk.WalkAnim.AnimationId = "http://www.roblox.com/asset/?id=616168032"
             L_206_.run.RunAnim.AnimationId = "http://www.roblox.com/asset/?id=616163682"
             L_206_.jump.JumpAnim.AnimationId = "http://www.roblox.com/asset/?id=1083218792"
@@ -2446,13 +2446,6 @@ wait(1)
 end)
    
    
-   sector14:AddButton("Zombie Run/Walk", function()
-   local L_206_ = game.Players.LocalPlayer.Character.Animate
-    L_206_.walk.WalkAnim.AnimationId = "http://www.roblox.com/asset/?id=616168032"
-            L_206_.run.RunAnim.AnimationId = "http://www.roblox.com/asset/?id=616163682"
-             game.Players.LocalPlayer.Character.Humanoid.Jump = true
-wait(1)
-end)
 
 sector14:AddButton("AutoClicker (Z)", function()
      local Player = game:GetService("Players").LocalPlayer
